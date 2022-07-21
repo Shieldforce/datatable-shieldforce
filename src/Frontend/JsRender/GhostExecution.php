@@ -24,7 +24,7 @@ class GhostExecution
                     'searching': true,
                     'ordering': true,
                     'info': true,
-                    'autoWidth': true,
+                    'autoWidth': false,
                     'pagingType': 'full_numbers',
                     'language': {
                         'sEmptyTable': 'Nenhum registro encontrado',
