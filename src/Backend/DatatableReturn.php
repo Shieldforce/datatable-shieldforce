@@ -49,22 +49,14 @@ class DatatableReturn
         $posts = [];
         foreach ($list as $index => $value) {
             if ($index >= $start && $index <= $limit ) {
-                $posts[$index] = self::setColumns($index, $value);
+                $posts[$index] = $value;
             }
         }
 
-        //$search = $post["search"];
-        //$search = self::filterIsNotNull($search);
+        // $search = $post["search"];
+        // $search = self::filterIsNotNull($search);
 
         return $posts;
-    }
-
-    private static function setColumns($index, $value)
-    {
-        return [
-            "id"      => $index,
-            "name"    => $value
-        ];
     }
 
     private static function filterIsNotNull($searchCustom)
