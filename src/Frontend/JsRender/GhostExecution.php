@@ -6,7 +6,13 @@ use Shieldforce\Backend\DatatableRender;
 
 class GhostExecution
 {
-    public static function js(string $url, bool $stateSave = true)
+    public static function js(
+        string $url,
+        bool $stateSave = true,
+        bool $paging = true,
+        bool $searching = true,
+        bool $ordering = true
+    )
     {
         $columns = json_encode(DatatableRender::getColumns());
         $dom     = '<"row mb-3"<"col-sm-4"l><"col-sm-8 text-end"<"d-flex justify-content-end"fB>>>t<"d-flex align-items-center"<"me-auto"i><"mb-0"p>>';
@@ -18,11 +24,11 @@ class GhostExecution
                     dom: '{$dom}',
                     lengthMenu: [ 10, 20, 30, 40, 50 ],
                     stateSave: '{$stateSave}',
-                    responsive:true,
-                    'paging': true,
+                    responsive: true,
+                    'paging': '{$paging}',
                     'lengthChange': true,
-                    'searching': true,
-                    'ordering': true,
+                    'searching': '{$searching}',
+                    'ordering': '{$ordering}',
                     'info': true,
                     'autoWidth': false,
                     'pagingType': 'full_numbers',
