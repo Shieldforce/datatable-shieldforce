@@ -85,7 +85,7 @@ class DatatableRender
      */
     public static function getId() : string
     {
-        return self::$id ?? "datatableId";
+        return self::$id ?? "datatableDefault";
     }
 
 
