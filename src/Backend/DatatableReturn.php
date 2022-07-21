@@ -8,17 +8,25 @@ class DatatableReturn
 {
     public static function baseReturn($post, $list)
     {
-        $columns        = array_column($post["columns"], "name");
-        $totalData      = count($list);
-        $start          = $post['start'];
-        $limit          = $post['length'];
-        $order          = $columns[$post['order']['0']['column']];
-        $dir            = $post['order']['0']['dir'];
-        $list           = self::dataOffset($list, $start, $limit);
-        $list           = self::dataSearchFilter($list, $post);
-        $posts          = ArrayOrderable::array($list, $order, $dir);
-        $totalFiltered  = count($posts);
-        $data           = [];
+        $columns                = array_column($post["columns"], "name");
+        $totalData              = count($list);
+        $start                  = $post['start'];
+        $limit                  = $post['length'];
+        $order                  = $columns[$post['order']['0']['column']];
+        $dir                    = $post['order']['0']['dir'];
+
+
+        $search                 = self::dataSearchFilter($list, $post);
+
+
+        $posts                  = ArrayOrderable::array($search, $order, $dir);
+
+        $dataOffsetAndLimit     = self::dataOffsetAndLimit($posts, $start, $limit);
+
+
+
+        $totalFiltered          = count($dataOffsetAndLimit);
+        $data                   = [];
         if( $posts ) {
             foreach ( $posts as $r ) {
                 foreach ( $columns as $key => $col ) {
@@ -52,7 +60,7 @@ class DatatableReturn
         return $list;
     }
 
-    private static function dataOffset($list, $start, $limit)
+    private static function dataOffsetAndLimit($list, $start, $limit)
     {
         $posts = [];
         foreach ($list as $index => $value) {
