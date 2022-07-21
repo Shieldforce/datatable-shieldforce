@@ -33,6 +33,14 @@ class DatatableRender
                             {$htmlColumn}
                         </tr>
                         </thead>
+                        <tbody>
+                            <tr>
+                                <td>teste1</td>
+                                <td>teste2</td>
+                                <td>teste3</td>
+                                <td>teste4</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
