@@ -24,10 +24,8 @@ class DatatableRender
         $htmlColumn = count($columns) == 0 ? "<th class='text-center'>Nenhum coluna informada!</th>" : '';
         $htmlColumn = self::loopColumns($columns, $htmlColumn);
         return "
-        <div id='datatable' class='mb-5'>
-            <div class='card'>
-                <div class='card-body'>
-                    <table id='datatableDefault' class='table text-nowrap w-100'>
+        
+                    <table id='datatableDefault' class='table table-striped table-bordered nowrap' style='width:100%'>
                         <thead>
                         <tr>
                             {$htmlColumn}
@@ -42,9 +40,7 @@ class DatatableRender
                             </tr>
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>";
+                ";
     }
 
     /**
