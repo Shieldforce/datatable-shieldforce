@@ -1,5 +1,7 @@
 vendor/*
 .env
+/.idea
+.idea
 .idea/*
 .vscode
 public/*
