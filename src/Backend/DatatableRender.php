@@ -17,9 +17,9 @@ class DatatableRender
         /*<th>#</th>
         <th>Nome</th>
         <th>Ação</th>*/
-        foreach ($columns as $column) {
+        /*foreach ($columns as $column) {
 
-        }
+        }*/
 
 
         return "
