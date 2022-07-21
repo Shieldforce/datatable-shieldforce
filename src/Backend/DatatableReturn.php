@@ -4,9 +4,19 @@ namespace Shieldforce\Backend;
 
 use Shieldforce\Helpers\ArrayOrderable;
 
+/**
+ * Classes qie retorna os resultados
+ */
 class DatatableReturn
 {
-    public static function baseReturn($post, $list, callable $callable)
+    /**
+     * Responsável por retornar os resultados
+     * @param $post
+     * @param $list
+     * @param callable $callable
+     * @return false|string
+     */
+    public static function baseReturn($post, $list, callable $callable) : false|string
     {
         $columns                = array_column($post["columns"], "name");
         $totalData              = count($list);
@@ -35,7 +45,13 @@ class DatatableReturn
         ]);
     }
 
-    private static function dataSearchFilter($list, $post)
+    /**
+     * Responsável por filtrar os resultados
+     * @param $list
+     * @param $post
+     * @return array
+     */
+    private static function dataSearchFilter($list, $post) : array
     {
         $search = $post["search"]["value"] ?? false;
         if($search) {
@@ -51,7 +67,14 @@ class DatatableReturn
         return $newArray ?? $list;
     }
 
-    private static function dataOffsetAndLimit($list, $start, $limit)
+    /**
+     * Responsável por paginar
+     * @param $list
+     * @param $start
+     * @param $limit
+     * @return array
+     */
+    private static function dataOffsetAndLimit($list, $start, $limit) : array
     {
         $posts = [];
         foreach ($list as $index => $value) {
