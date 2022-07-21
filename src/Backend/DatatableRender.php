@@ -13,7 +13,7 @@ class DatatableRender
      */
     public static function renderHtmlTable($columns=[])
     {
-        $htmlColumn = "<th>Nenhum coluna informada!</th>";
+        $htmlColumn = "<th class='text-center'>Nenhum coluna informada!</th>";
         /*<th>#</th>
         <th>Nome</th>
         <th>Ação</th>*/
