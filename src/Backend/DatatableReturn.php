@@ -37,9 +37,18 @@ class DatatableReturn
 
     private static function dataSearchFilter($list, $post)
     {
-        // $search = $post["search"];
-        // $search = self::filterIsNotNull($search);
-        return $list;
+        $search = $post["search"]["value"] ?? false;
+        if($search) {
+            $newArray = [];
+            foreach ($list as $line) {
+                foreach ($line as $index => $v) {
+                    if(preg_match("/".$search.".*/", $line[$index])) {
+                        $newArray[] = $line;
+                    }
+                }
+            }
+        }
+        return $newArray ?? $list;
     }
 
     private static function dataOffsetAndLimit($list, $start, $limit)
