@@ -49,14 +49,14 @@ class DatatableRender
     {
         foreach ($columns as $colId => $column) {
             $htmlColumn .=
-                "<th 
+                "<td 
                     style='width: {$columns['width']};' 
                     id='{$colId}' 
                     data-column-name='{$column['name']}' 
                     class='{$column['class']}'
                 >
                 {$column['title']}
-                </th>";
+                </td>";
         }
         return $htmlColumn;
     }
