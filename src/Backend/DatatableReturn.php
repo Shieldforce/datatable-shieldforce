@@ -14,7 +14,8 @@ class DatatableReturn
         $limit          = $post['length'];
         $order          = $columns[$post['order']['0']['column']];
         $dir            = $post['order']['0']['dir'];
-        $list           = self::dataSearchFilter($list, $start, $limit, $post);
+        $list           = self::dataOffset($list, $start, $limit);
+        $list           = self::dataSearchFilter($list, $post);
         $posts          = ArrayOrderable::array($list, $order, $dir);
         $totalFiltered  = count($posts);
         $data           = [];
@@ -44,17 +45,14 @@ class DatatableReturn
         ]);
     }
 
-    private static function dataSearchFilter($list, $start, $limit, $post)
+    private static function dataSearchFilter($list, $post)
     {
-        $posts = self::dataOrderable($list, $start, $limit);
-
         // $search = $post["search"];
         // $search = self::filterIsNotNull($search);
-
-        return $posts;
+        return $list;
     }
 
-    private static function dataOrderable($list, $start, $limit)
+    private static function dataOffset($list, $start, $limit)
     {
         $posts = [];
         foreach ($list as $index => $value) {
