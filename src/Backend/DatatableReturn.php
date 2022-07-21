@@ -2,6 +2,8 @@
 
 namespace Shieldforce\Backend;
 
+use Shieldforce\Helpers\ArrayOrderable;
+
 class DatatableReturn
 {
     public static function baseReturn($post, $list)
@@ -12,7 +14,8 @@ class DatatableReturn
         $limit          = $post['length'];
         $order          = $columns[$post['order']['0']['column']];
         $dir            = $post['order']['0']['dir'];
-        $posts          = $list;
+        $list           = self::dataSearchFilter($list, $start, $limit, $post);
+        $posts          = ArrayOrderable::array($list, $order, $dir);
         $totalFiltered  = count($posts);
         $data           = [];
         if( $posts ) {
@@ -39,5 +42,38 @@ class DatatableReturn
             "recordsFiltered"               => intval($totalFiltered),
             "data"                          => $data
         ]);
+    }
+
+    private static function dataSearchFilter($list, $start, $limit, $post)
+    {
+        $posts = [];
+        foreach ($list as $index => $value) {
+            if ($index >= $start && $index <= $limit ) {
+                $posts[$index] = self::setColumns($index, $value);
+            }
+        }
+
+        //$search = $post["search"];
+        //$search = self::filterIsNotNull($search);
+
+        return $posts;
+    }
+
+    private static function setColumns($index, $value)
+    {
+        return [
+            "id"      => $index,
+            "name"    => $value
+        ];
+    }
+
+    private static function filterIsNotNull($searchCustom)
+    {
+        foreach ($searchCustom as $index => $sc) {
+            if(!$sc["value"]) {
+                unset($searchCustom[$index]);
+            }
+        }
+        return $searchCustom;
     }
 }
