@@ -16,6 +16,12 @@ class DatatableReturn
         $dir            = $post['order']['0']['dir'];
         $list           = self::dataSearchFilter($list, $start, $limit, $post);
         $posts          = ArrayOrderable::array($list, $order, $dir);
+
+        echo "<pre>";
+        print_r($posts);
+        echo "</pre>";
+        die;
+
         $totalFiltered  = count($posts);
         $data           = [];
         if( $posts ) {
