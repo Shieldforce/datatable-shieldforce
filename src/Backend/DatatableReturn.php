@@ -16,7 +16,7 @@ class DatatableReturn
      * @param callable $callable
      * @return false|string
      */
-    public static function baseReturn($post, $list, callable $callable) : false|string
+    public static function baseReturn(array $post, array $list, callable $callable) : false|string
     {
         $columns                = array_column($post["columns"], "name");
         $totalData              = count($list);
