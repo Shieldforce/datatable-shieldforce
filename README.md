@@ -5,3 +5,4 @@
 ```
 composer require shieldfroce/datatable
 ```
+
