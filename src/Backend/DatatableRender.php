@@ -29,8 +29,8 @@ class DatatableRender
      */
     public static function renderHtmlTable(
         array $columns = [],
-        $id = "datatableDefault",
-        $class = "display table responsive table-striped table-bordered nowrap"
+        string $id = "datatableDefault",
+        string $class = "display table responsive table-striped table-bordered nowrap"
     ) : string
     {
         self::$id = $id;
@@ -54,7 +54,7 @@ class DatatableRender
      * @param $htmlColumn
      * @return mixed|string
      */
-    private static function loopColumns($columns, $htmlColumn)
+    private static function loopColumns(array $columns, string $htmlColumn) : string
     {
         foreach ($columns as $index => $column) {
             $htmlColumn .=
@@ -74,7 +74,7 @@ class DatatableRender
      * Responsável por mostrar a lista de colunas
      * @return array
      */
-    public static function getColumns()
+    public static function getColumns() : array
     {
         return self::$columns;
     }
@@ -83,7 +83,7 @@ class DatatableRender
      * Responsável por mostrar o ‘id’ de idêntificação da tabela
      * @return string
      */
-    public static function getId()
+    public static function getId() : string
     {
         return self::$id;
     }
