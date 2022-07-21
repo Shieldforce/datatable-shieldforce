@@ -16,14 +16,14 @@ class GhostExecution
                 dataTable.DataTable({
                     dom: 'Bfrtip',
                     lengthMenu: [ 10, 20, 30, 40, 50 ],
-                    stateSave: false,
+                    stateSave: true,
                     responsive:true,
                     'paging': true,
                     'lengthChange': true,
-                    'searching': false,
+                    'searching': true,
                     'ordering': true,
-                    'info': false,
-                    'autoWidth': false,
+                    'info': true,
+                    'autoWidth': true,
                     'pagingType': 'full_numbers',
                     'language': {
                         'sEmptyTable': 'Nenhum registro encontrado',
