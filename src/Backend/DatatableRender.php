@@ -43,11 +43,11 @@ class DatatableRender
      */
     private static function loopColumns($columns, $htmlColumn)
     {
-        foreach ($columns as $colId => $column) {
+        foreach ($columns as $index => $column) {
             $htmlColumn .=
                 "<th 
                     style='width: {$columns['width']};' 
-                    id='{$colId}' 
+                    id='{$index}' 
                     data-column-name='{$column['name']}' 
                     class='{$column['class']}'
                 >
