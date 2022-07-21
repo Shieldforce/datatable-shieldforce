@@ -11,8 +11,17 @@ class DatatableRender
      * Rendeniza o html de uma table
      * @return string
      */
-    public static function renderHtmlTable()
+    public static function renderHtmlTable($columns)
     {
+        $htmlColumn = "<th>Nenhum coluna informada!</th>";
+        /*<th>#</th>
+        <th>Nome</th>
+        <th>Ação</th>*/
+        foreach ($columns as $column) {
+
+        }
+
+
         return "
         <div id='datatable' class='mb-5'>
             <div class='card'>
@@ -20,9 +29,7 @@ class DatatableRender
                     <table id='datatableDefault' class='table text-nowrap w-100'>
                         <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Nome</th>
-                            <th>Ação</th>
+                            {$htmlColumn}
                         </tr>
                         </thead>
                     </table>
