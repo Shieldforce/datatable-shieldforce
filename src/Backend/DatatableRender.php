@@ -21,6 +21,7 @@ class DatatableRender
      */
     public static function renderHtmlTable(array $columns = []) : string
     {
+        self::$columns = $columns;
         $htmlColumn = count($columns) == 0 ? "<th class='text-center'>Nenhum coluna informada!</th>" : '';
         $htmlColumn = self::loopColumns($columns, $htmlColumn);
         return "
@@ -54,6 +55,11 @@ class DatatableRender
                 </th>";
         }
         return $htmlColumn;
+    }
+
+    public static function getColumns()
+    {
+        return self::$columns;
     }
 
 

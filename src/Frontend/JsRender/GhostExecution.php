@@ -2,10 +2,13 @@
 
 namespace Shieldforce\Frontend\JsRender;
 
+use Shieldforce\Backend\DatatableRender;
+
 class GhostExecution
 {
     public static function js()
     {
+        $columns = json_encode(DatatableRender::getColumns());
         return "
             <script>
             var dataTable = $('#datatableDefault');
@@ -62,32 +65,7 @@ class GhostExecution
                     // -----------------------------------------------------------------------------------------------------
                 });
             });
-            var columns = [
-                    {
-                        'titleCustom'  :'#',
-                        'data'         :'id',
-                        'name'         :'id',
-                        'orderable'    :true,
-                    },
-                    {
-                        'titleCustom'  :'Nome',
-                        'data'         :'name',
-                        'name'         :'name',
-                        'orderable'    :true,
-                    },
-                     {
-                        'titleCustom'  :'Idade',
-                        'data'         :'age',
-                        'name'         :'age',
-                        'orderable'    :true,
-                    },
-                    {
-                        'titleCustom'  :'Ação',
-                        'data'         :'action',
-                        'name'         :'action',
-                        'orderable'    :false,
-                    },
-                ];
+            var columns = {$columns};
             </script>
         ";
     }
