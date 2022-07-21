@@ -6,7 +6,7 @@ use Shieldforce\Backend\DatatableRender;
 
 class GhostExecution
 {
-    public static function js(string $url, string $lengthMenu = '10,20,30,40,50')
+    public static function js(string $url, bool $stateSave = true)
     {
         $columns = json_encode(DatatableRender::getColumns());
         $dom     = '<"row mb-3"<"col-sm-4"l><"col-sm-8 text-end"<"d-flex justify-content-end"fB>>>t<"d-flex align-items-center"<"me-auto"i><"mb-0"p>>';
@@ -16,8 +16,8 @@ class GhostExecution
             $(document).ready(function () {
                 dataTable.DataTable({
                     dom: '{$dom}',
-                    lengthMenu: [ '{$lengthMenu}' ],
-                    stateSave: true,
+                    lengthMenu: [ 10, 20, 30, 40, 50 ],
+                    stateSave: '{$stateSave}',
                     responsive:true,
                     'paging': true,
                     'lengthChange': true,
