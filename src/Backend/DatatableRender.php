@@ -24,24 +24,23 @@ class DatatableRender
         $htmlColumn = count($columns) == 0 ? "<th class='text-center'>Nenhum coluna informada!</th>" : '';
         $htmlColumn = self::loopColumns($columns, $htmlColumn);
         return "
-        
-                    <table id='datatableDefault' class='table table-striped table-bordered nowrap' style='width:100%'>
-                        <thead>
-                        <tr>
-                            {$htmlColumn}
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>teste1</td>
-                                <td>teste2</td>
-                                <td>teste3</td>
-                                <td>teste4</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                ";
-    }
+        <table id='datatableDefault' class='table table-striped table-bordered nowrap' style='width:100%'>
+            <thead>
+            <tr>
+                {$htmlColumn}
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>teste1</td>
+                    <td>teste2</td>
+                    <td>teste3</td>
+                    <td>teste4</td>
+                </tr>
+            </tbody>
+        </table>
+        ";
+}
 
     /**
      * Responsável por rodar o loop das colunas informadas
