@@ -19,9 +19,9 @@ class DatatableReturn
         $search                 = self::dataSearchFilter($list, $post);
 
 
-        $posts                  = ArrayOrderable::array($search, $order, $dir);
+        $ordarable              = ArrayOrderable::array($search, $order, $dir);
 
-        $dataOffsetAndLimit     = self::dataOffsetAndLimit($posts, $start, $limit);
+        $dataOffsetAndLimit     = self::dataOffsetAndLimit($ordarable, $start, $limit);
 
 
 
