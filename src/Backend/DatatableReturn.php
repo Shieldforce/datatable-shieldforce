@@ -27,8 +27,8 @@ class DatatableReturn
 
         $totalFiltered          = count($dataOffsetAndLimit);
         $data                   = [];
-        if( $posts ) {
-            foreach ( $posts as $r ) {
+        if( $dataOffsetAndLimit ) {
+            foreach ( $dataOffsetAndLimit as $r ) {
                 foreach ( $columns as $key => $col ) {
                     if($col=="id") {
                         $nestedData["$col"] = $r["id"] ?? "-";
