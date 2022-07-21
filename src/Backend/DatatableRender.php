@@ -25,7 +25,7 @@ class DatatableRender
         $htmlColumn = count($columns) == 0 ? "<th class='text-center'>Nenhum coluna informada!</th>" : '';
         $htmlColumn = self::loopColumns($columns, $htmlColumn);
         return "
-        <table id='datatableDefault' class='display responsive nowrap' style='width:100%'>
+        <table id='datatableDefault' class='table display responsive table-striped table-bordered nowrap' style='width:100%'>
             <thead>
             <tr>
                 {$htmlColumn}
