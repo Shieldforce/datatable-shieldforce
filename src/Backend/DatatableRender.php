@@ -17,15 +17,21 @@ class DatatableRender
     /**
      * Rendeniza o html de uma table
      * @param array $columns
+     * @param $id
+     * @param $class
      * @return string
      */
-    public static function renderHtmlTable(array $columns = []) : string
+    public static function renderHtmlTable(
+        array $columns = [],
+        $id = "datatableDefault",
+        $class = "table display responsive table-striped table-bordered nowrap"
+    ) : string
     {
         self::$columns = $columns;
         $htmlColumn = count($columns) == 0 ? "<th class='text-center'>Nenhum coluna informada!</th>" : '';
         $htmlColumn = self::loopColumns($columns, $htmlColumn);
         return "
-        <table id='datatableDefault' class='table display responsive table-striped table-bordered nowrap' style='width:100%'>
+        <table id='{$id}' class='{$class}' style='width:100%'>
             <thead>
             <tr>
                 {$htmlColumn}
