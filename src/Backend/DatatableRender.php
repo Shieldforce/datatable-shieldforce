@@ -7,19 +7,22 @@ namespace Shieldforce\Backend;
  */
 class DatatableRender
 {
+
+    /**
+     * Lista de colunas para setup da tabela
+     * @var array
+     */
+    private static array $columns = [];
+
     /**
      * Rendeniza o html de uma table
+     * @param array $columns
      * @return string
      */
-    public static function renderHtmlTable($columns=[])
+    public static function renderHtmlTable(array $columns = []) : string
     {
         $htmlColumn = count($columns) == 0 ? "<th class='text-center'>Nenhum coluna informada!</th>" : '';
-
-        foreach ($columns as $colId => $column) {
-            $htmlColumn .= "<th id='{$colId}' data-column-name='{$column['name']}' class='{$column['class']}'>{$column['title']}</th>";
-        }
-
-
+        $htmlColumn = self::loopColumns($columns, $htmlColumn);
         return "
         <div id='datatable' class='mb-5'>
             <div class='card'>
@@ -32,13 +35,23 @@ class DatatableRender
                         </thead>
                     </table>
                 </div>
-                <div class='card-arrow'>
-                    <div class='card-arrow-top-left'></div>
-                    <div class='card-arrow-top-right'></div>
-                    <div class='card-arrow-bottom-left'></div>
-                    <div class='card-arrow-bottom-right'></div>
-                </div>
             </div>
         </div>";
     }
+
+    /**
+     * Responsável por rodar o loop das colunas informadas
+     * @param $columns
+     * @param $htmlColumn
+     * @return mixed|string
+     */
+    private static function loopColumns($columns, $htmlColumn)
+    {
+        foreach ($columns as $colId => $column) {
+            $htmlColumn .= "<th id='{$colId}' data-column-name='{$column['name']}' class='{$column['class']}'>{$column['title']}</th>";
+        }
+        return $htmlColumn;
+    }
+
+
 }
