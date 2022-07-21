@@ -6,7 +6,7 @@ use Shieldforce\Helpers\ArrayOrderable;
 
 class DatatableReturn
 {
-    public static function baseReturn($post, $list)
+    public static function baseReturn($post, $list, callable $callable)
     {
         $columns                = array_column($post["columns"], "name");
         $totalData              = count($list);
@@ -22,17 +22,7 @@ class DatatableReturn
         if( $dataOffsetAndLimit ) {
             foreach ( $dataOffsetAndLimit as $r ) {
                 foreach ( $columns as $key => $col ) {
-                    if($col=="id") {
-                        $nestedData["$col"] = $r["id"] ?? "-";
-                    } elseif($col=="name") {
-                        $nestedData["$col"] = $r["name"] ?? "-";
-                    } elseif($col=="age") {
-                        $nestedData["$col"] = $r["age"] ?? "-";
-                    } elseif($col=="action") {
-                        $nestedData["$col"]   = "-";
-                    } else {
-                        $nestedData["$col"] = "-";
-                    }
+                    $nestedData = call_user_func($callable, $nestedData, $col, $r);
                 }
                 $data[] = $nestedData;
             }
