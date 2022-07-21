@@ -11,7 +11,7 @@ class GhostExecution
             var dataTable = $('#datatableDefault');
             $(document).ready(function () {
                 dataTable.DataTable({
-                    dom: '<'row mb-3'<'col-sm-4'l><'col-sm-8 text-end'<'d-flex justify-content-end'fB>>>t<'d-flex align-items-center'<'me-auto'i><'mb-0'p>>',
+                    dom: 'Bfrtip',
                     lengthMenu: [ 10, 20, 30, 40, 50 ],
                     stateSave: false,
                     responsive:true,
