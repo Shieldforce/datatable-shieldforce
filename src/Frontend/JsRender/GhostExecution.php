@@ -9,7 +9,7 @@ class GhostExecution
         return "
             <script>
             $(document).ready(function() {
-                var table = $('#datatable').DataTable( {
+                var table = $('#datatableDefault').DataTable( {
                     responsive: true
                 } );
              
