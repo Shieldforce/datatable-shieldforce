@@ -1,0 +1,63 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "25d7ba2b05e88c48c8e4acc981d04dfa",
+    "packages": [
+        {
+            "name": "shieldfroce/datatable",
+            "version": "dev-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Shieldforce/datatable-shieldforce.git",
+                "reference": "ca3081e94ef28da1ab1c5370e950f8f802e93a3f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Shieldforce/datatable-shieldforce/zipball/ca3081e94ef28da1ab1c5370e950f8f802e93a3f",
+                "reference": "ca3081e94ef28da1ab1c5370e950f8f802e93a3f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Shieldforce\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Alexandre Ferreira",
+                    "email": "shieldforce2@gmail.com"
+                }
+            ],
+            "description": "Pacote datatable server-side",
+            "support": {
+                "issues": "https://github.com/Shieldforce/datatable-shieldforce/issues",
+                "source": "https://github.com/Shieldforce/datatable-shieldforce/tree/dev"
+            },
+            "time": "2022-07-21T17:35:10+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "shieldfroce/datatable": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=8.1"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

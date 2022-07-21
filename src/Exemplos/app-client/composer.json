@@ -1,0 +1,21 @@
+{
+  "name":"shieldfroce/datatable-client",
+  "description":"Consumir pacote shieldforce/datatable",
+  "type":"project",
+  "license":"MIT",
+  "authors":[
+    {
+      "name":"Alexandre Ferreira",
+      "email":"shieldforce2@gmail.com"
+    }
+  ],
+  "autoload":{
+    "psr-4":{
+      "App\\":"app/"
+    }
+  },
+  "require": {
+    "php": ">=8.1",
+    "shieldfroce/datatable": "dev-dev"
+  }
+}
