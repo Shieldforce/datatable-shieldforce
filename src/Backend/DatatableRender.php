@@ -35,7 +35,7 @@ class DatatableRender
     {
         self::$id = $id;
         self::$columns = $columns;
-        $htmlColumn = count($columns) == 0 ? "<th class='text-center'>Nenhum coluna informada!</th>" : '';
+        $htmlColumn = count($columns) == 0 ? "<th class='text-center'>Nenhuma coluna informada!</th>" : '';
         $htmlColumn = self::loopColumns($columns, $htmlColumn);
         return "
         <table id='{$id}' class='{$class}' style='width:100%'>
