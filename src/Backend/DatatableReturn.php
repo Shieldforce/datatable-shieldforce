@@ -11,18 +11,13 @@ class DatatableReturn
         $columns                = array_column($post["columns"], "name");
         $totalData              = count($list);
         $start                  = $post['start'];
-        $limit                  = $post['length'];
+        $limit                  = $start + $post['length'];
         $order                  = $columns[$post['order']['0']['column']];
         $dir                    = $post['order']['0']['dir'];
-
         $search                 = self::dataSearchFilter($list, $post);
-
         $ordarable              = ArrayOrderable::array($search, $order, $dir);
-
         $dataOffsetAndLimit     = self::dataOffsetAndLimit($ordarable, $start, $limit);
-
         $totalFiltered          = count($search);
-
         $data                   = [];
         if( $dataOffsetAndLimit ) {
             foreach ( $dataOffsetAndLimit as $r ) {
