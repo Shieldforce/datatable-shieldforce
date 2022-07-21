@@ -11,7 +11,7 @@ class DatatableRender
      * Rendeniza o html de uma table
      * @return string
      */
-    public static function renderHtmlTable($columns)
+    public static function renderHtmlTable($columns=[])
     {
         $htmlColumn = "<th>Nenhum coluna informada!</th>";
         /*<th>#</th>
