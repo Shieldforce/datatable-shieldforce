@@ -28,7 +28,7 @@ class GhostExecution
         $dom     = '<"row mb-3"<"col-sm-4"l><"col-sm-8 text-end"<"d-flex justify-content-end"fB>>>t<"d-flex align-items-center"<"me-auto"i><"mb-0"p>>';
         return "
             <script>
-            var dataTable = $('#'{$id});
+            var dataTable = $('#{$id}');
             $(document).ready(function () {
                 dataTable.DataTable({
                     dom: '{$dom}',
