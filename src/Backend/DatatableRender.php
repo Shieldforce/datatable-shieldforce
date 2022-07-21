@@ -15,6 +15,12 @@ class DatatableRender
     private static array $columns = [];
 
     /**
+     * ‘ID’ de idêntificação da tabela
+     * @var string
+     */
+    private static string $id;
+
+    /**
      * Rendeniza o html de uma table
      * @param array $columns
      * @param $id
@@ -70,6 +76,15 @@ class DatatableRender
     public static function getColumns()
     {
         return self::$columns;
+    }
+
+    /**
+     * Responsável por mostrar o ‘id’ de idêntificação da tabela
+     * @return string
+     */
+    public static function getId()
+    {
+        return self::$id;
     }
 
 
