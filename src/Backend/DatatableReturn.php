@@ -46,16 +46,22 @@ class DatatableReturn
 
     private static function dataSearchFilter($list, $start, $limit, $post)
     {
+        $posts = self::dataOrderable($list, $start, $limit);
+
+        // $search = $post["search"];
+        // $search = self::filterIsNotNull($search);
+
+        return $posts;
+    }
+
+    private static function dataOrderable($list, $start, $limit)
+    {
         $posts = [];
         foreach ($list as $index => $value) {
             if ($index >= $start && $index <= $limit ) {
                 $posts[$index] = $value;
             }
         }
-
-        // $search = $post["search"];
-        // $search = self::filterIsNotNull($search);
-
         return $posts;
     }
 
