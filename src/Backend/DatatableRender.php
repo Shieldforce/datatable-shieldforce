@@ -14,12 +14,10 @@ class DatatableRender
     public static function renderHtmlTable($columns=[])
     {
         $htmlColumn = "<th class='text-center'>Nenhum coluna informada!</th>";
-        /*<th>#</th>
-        <th>Nome</th>
-        <th>Ação</th>*/
-        /*foreach ($columns as $column) {
 
-        }*/
+        foreach ($columns as $colId => $column) {
+            $htmlColumn .= "<th id='{$colId}' data-column-name='{$column['name']}' class='{$column['class']}'>{$column['title']}</th>";
+        }
 
 
         return "
