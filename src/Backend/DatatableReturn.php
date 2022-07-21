@@ -42,7 +42,7 @@ class DatatableReturn
             $newArray = [];
             foreach ($list as $line) {
                 foreach ($line as $index => $v) {
-                    if(preg_match("/".$search.".*/", $line[$index])) {
+                    if(preg_match("/".$search.".*/i", $line[$index])) {
                         $newArray[] = $line;
                     }
                 }
@@ -60,15 +60,5 @@ class DatatableReturn
             }
         }
         return $posts;
-    }
-
-    private static function filterIsNotNull($searchCustom)
-    {
-        foreach ($searchCustom as $index => $sc) {
-            if(!$sc["value"]) {
-                unset($searchCustom[$index]);
-            }
-        }
-        return $searchCustom;
     }
 }
