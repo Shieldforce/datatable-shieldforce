@@ -64,7 +64,7 @@ class DatatableReturn
     {
         $posts = [];
         foreach ($list as $index => $value) {
-            if ($index >= $start && $index <= $limit ) {
+            if ($index >= $start && $index < $limit ) {
                 $posts[$index] = $value;
             }
         }
