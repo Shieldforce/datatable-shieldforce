@@ -6,6 +6,15 @@ use Shieldforce\Backend\DatatableRender;
 
 class GhostExecution
 {
+    /**
+     * Responsável por rendenizar as chamadas js
+     * @param string $url
+     * @param bool $stateSave
+     * @param bool $paging
+     * @param bool $searching
+     * @param bool $ordering
+     * @return string
+     */
     public static function js(
         string $url,
         bool $stateSave = true,

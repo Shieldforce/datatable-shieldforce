@@ -63,6 +63,10 @@ class DatatableRender
         return $htmlColumn;
     }
 
+    /**
+     * Responsável por mostrar a lista de colunas
+     * @return array
+     */
     public static function getColumns()
     {
         return self::$columns;
