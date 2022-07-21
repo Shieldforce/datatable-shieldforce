@@ -1,5 +1,7 @@
 <?php
 
+namespace Shieldforce\Backend;
+
 /**
  * Classe de renderização
  */
