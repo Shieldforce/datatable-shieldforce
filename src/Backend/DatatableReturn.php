@@ -6,14 +6,20 @@ class DatatableReturn
 {
     public static function baseReturn($post)
     {
-        $list           = [
-            ["id"=>1,"name"=>"Firstname Lastname","age"=>22],
-            ["id"=>2,"name"=>"Firstname Lastname","age"=>34],
-            ["id"=>3,"name"=>"Firstname Lastname","age"=>12],
-            ["id"=>4,"name"=>"Firstname Lastname","age"=>42],
-            ["id"=>5,"name"=>"Firstname Lastname","age"=>88],
-            ["id"=>6,"name"=>"Firstname Lastname","age"=>41],
-            ["id"=>7,"name"=>"Firstname Lastname","age"=>45],
+        $list = [
+            ["id"=>1, "name"=>"Firstname Lastname 1", "age"=>22],
+            ["id"=>2, "name"=>"Firstname Lastname 2", "age"=>34],
+            ["id"=>3, "name"=>"Firstname Lastname 3", "age"=>12],
+            ["id"=>4, "name"=>"Firstname Lastname 4", "age"=>42],
+            ["id"=>5, "name"=>"Firstname Lastname 5", "age"=>88],
+            ["id"=>6, "name"=>"Firstname Lastname 6", "age"=>41],
+            ["id"=>7, "name"=>"Firstname Lastname 7", "age"=>45],
+            ["id"=>8, "name"=>"Firstname Lastname 8", "age"=>45],
+            ["id"=>9, "name"=>"Firstname Lastname 9", "age"=>45],
+            ["id"=>10,"name"=>"Firstname Lastname 10","age"=>45],
+            ["id"=>11,"name"=>"Firstname Lastname 11","age"=>45],
+            ["id"=>12,"name"=>"Firstname Lastname 12","age"=>45],
+            ["id"=>12,"name"=>"Firstname Lastname 13","age"=>45],
         ];
 
         $columns        = array_column($post["columns"], "name");
