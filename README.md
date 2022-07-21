@@ -1,5 +1,11 @@
 ### Pacote datatable __*Shieldforce*__
 
+### Muito importante salientar que esta versão só é utilizado o boostrap 5 então, pode ser que altere alguma coisa no seu estilo, se não estiver usando bootstrap.
+
+### Muito importante salientar que esta versão só é utilizado o jquery-3.5.1 então, pode ser que altere alguma coisa na usabilidade caso sua versão do jquery seja diferente.
+
+### A parte legal é que como as tags são isoladas, você pode chamar em determinado lugar do seu código e não influênciar todo projeto!
+
 ## Requisitos:
 
 - [x] PHP >= 8.1
