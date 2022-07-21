@@ -6,7 +6,7 @@ use Shieldforce\Backend\DatatableRender;
 
 class GhostExecution
 {
-    public static function js()
+    public static function js(string $url)
     {
         $columns = json_encode(DatatableRender::getColumns());
         return "
@@ -52,7 +52,7 @@ class GhostExecution
                     'processing': true,
                     'serverSide': true,
                     'ajax': {
-                        'url'                      : 'server.php',
+                        'url'                      : '{$url}',
                         'dataType'                 : 'json',
                         'type'                     : 'POST',
                         'data'                     : function ( d ) {
