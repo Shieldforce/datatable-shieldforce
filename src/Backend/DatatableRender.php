@@ -24,7 +24,7 @@ class DatatableRender
     public static function renderHtmlTable(
         array $columns = [],
         $id = "datatableDefault",
-        $class = "table display responsive table-striped table-bordered nowrap"
+        $class = "table responsive table-striped table-bordered nowrap"
     ) : string
     {
         self::$columns = $columns;
