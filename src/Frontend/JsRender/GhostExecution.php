@@ -52,7 +52,7 @@ class GhostExecution
                     'processing': true,
                     'serverSide': true,
                     'ajax': {
-                        'url'                      : '/server.php',
+                        'url'                      : 'server.php',
                         'dataType'                 : 'json',
                         'type'                     : 'POST',
                         'data'                     : function ( d ) {
