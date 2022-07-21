@@ -50,7 +50,7 @@ class DatatableRender
         foreach ($columns as $colId => $column) {
             $htmlColumn .=
                 "<th 
-                    style='width: {$columns['width']}' 
+                    style='width: {$columns['width']};' 
                     id='{$colId}' 
                     data-column-name='{$column['name']}' 
                     class='{$column['class']}'
