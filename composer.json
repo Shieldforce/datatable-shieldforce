@@ -3,6 +3,7 @@
   "description":"Pacote datatable server-side",
   "type":"library",
   "license":"GPL-3.0-or-later",
+  "minimum-stability": "dev",
   "authors":[
     {
       "name":"Alexandre Ferreira",
